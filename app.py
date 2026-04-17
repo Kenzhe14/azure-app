@@ -78,5 +78,9 @@ def analyze():
         logger.error(f"ID {analysis_id}: Критическая ошибка: {str(e)}")
         return jsonify({"error": "Internal Server Error"}), 500
 
+@app.route('/')
+def home():
+    return "API is running! Use POST /analyze to process images."
+
 if __name__ == '__main__':
     app.run(debug=True)
