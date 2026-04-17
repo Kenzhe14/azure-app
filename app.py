@@ -65,10 +65,9 @@ def analyze():
         })
 
         return jsonify({
-            "status": "success",
-            "analysis_id": analysis_id,
-            "faces_detected": faces_count,
-            "details": rek_response['FaceDetails']
+        "status": "success",
+        "faces_detected": len(rek_response['FaceDetails']),
+        "details": rek_response['FaceDetails']
         })
 
     except ClientError as e:
